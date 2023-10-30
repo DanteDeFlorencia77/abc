@@ -1,0 +1,2 @@
+WATERPOLO/waterpolo
+ Juego practicado en una piscina entre dos equipos de siete jugadores cada uno, que consiste en introducir el balón con la mano en la portería contraria mientras se nada.

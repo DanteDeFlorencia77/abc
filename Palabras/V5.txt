@@ -1,0 +1,2 @@
+VUELO/vuelo
+Acción de volar.

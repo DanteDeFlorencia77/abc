@@ -1,0 +1,3 @@
+TECLADO/teclado
+ Conjunto de las teclas de un piano u otro instrumento musical.
+

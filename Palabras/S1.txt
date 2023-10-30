@@ -1,0 +1,2 @@
+SALTAR/saltar
+Salvar de un salto un espacio o distancia. Saltar una zanja.

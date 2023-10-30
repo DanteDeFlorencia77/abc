@@ -1,0 +1,2 @@
+SEMANA/semana
+Serie de siete días naturales consecutivos, del lunes al domingo.

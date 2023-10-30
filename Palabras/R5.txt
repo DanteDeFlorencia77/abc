@@ -1,0 +1,2 @@
+RUEDA/rueda
+Pieza mecánica en forma de disco que gira alrededor de un eje.
