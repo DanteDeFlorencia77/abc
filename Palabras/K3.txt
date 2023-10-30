@@ -1,0 +1,2 @@
+KILO/kilo
+Con nombres de unidades de medida, forma el múltiplo correspondiente.

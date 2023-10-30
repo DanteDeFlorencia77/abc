@@ -1,0 +1,2 @@
+LUZ/luz
+Agente físico que hace visibles los objetos.
