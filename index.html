@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aprendiendo el Alfabeto</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    .letter-image {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+/*       border: 2px solid chocolate;
+ */    }
+ .display-container {
+      display: flex;
+      width: 700px; /* Ancho deseado para el contenedor */
+      height: 400px; /* Alto deseado para el contenedor */
+      margin: 0 auto; /* Centrar el contenedor */
+      border: 2px solid crimson;
+    }
+    .letter-button {
+      width: 70px; /* Ancho deseado */
+      height: 70px; /* Alto deseado */
+      font-size: 20px; /* Tamaño de fuente deseado */
+      margin: 5px;
+      
+    }
+    #word{
+      font-size: 30px;
+    }
+    /* Estilos específicos para teléfonos (pantallas de 480px o más pequeñas) */
+    @media (max-width: 480px) {
+      .letter-image {
+        width: 100px; /* Ajustar el tamaño de la imagen para teléfonos */
+        height: 100px;
+      }
+      .display-container {
+        width: 100px; /* Ajustar el tamaño del contenedor para teléfonos */
+        height: 100px;
+      }
+      .letter-button {
+        width: 60px; /* Ajustar el tamaño de los botones para teléfonos */
+        height: 60px;
+        font-size: 14px; /* Ajustar el tamaño de fuente de los botones para teléfonos */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Aprendiendo el Alfabeto</h1>
+
+  <!-- Div para mostrar la letra y la palabra -->
+  <div class="display-container" id="letter-display">
+    <img id="image" class="letter-image" src="" alt="">
+    <p id="word"></p>
+  </div>
+<!--   <div id="letter-display">
+    <img id="image" class="letter-image" src="" alt="">
+    <p id="word" style="font-size: 44px;"></p>
+
+    <p id="word"></p>
+  </div>
+ -->  
+  <!-- Botones para cada letra del alfabeto -->
+  <div id="letter-buttons">
+    <button class="letter-button" onclick="showLetter('A')">A/a</button>
+    <button class="letter-button" onclick="showLetter('B')">B/b</button>
+    <button class="letter-button" onclick="showLetter('C')">C/c</button>
+    <button class="letter-button" onclick="showLetter('D')">D/d</button>
+    <button class="letter-button" onclick="showLetter('E')">E/e</button>
+    <button class="letter-button" onclick="showLetter('F')">F/f</button>
+    <button class="letter-button" onclick="showLetter('G')">G/g</button>
+    <button class="letter-button" onclick="showLetter('H')">H/h</button>
+    <button class="letter-button" onclick="showLetter('I')">I/i</button>
+    <button class="letter-button" onclick="showLetter('J')">J/j</button>
+    <button class="letter-button" onclick="showLetter('K')">K/k</button>
+    <button class="letter-button" onclick="showLetter('L')">L/l</button>
+    <button class="letter-button" onclick="showLetter('M')">M/m</button>
+    <button class="letter-button" onclick="showLetter('N')">N/n</button>
+    <button class="letter-button" onclick="showLetter('Ñ')">Ñ/ñ</button>
+    <br>
+    <button class="letter-button" onclick="showLetter('O')">O/o</button>
+    <button class="letter-button" onclick="showLetter('P')">P/p</button>
+    <button class="letter-button" onclick="showLetter('Q')">Q/q</button>
+    <button class="letter-button" onclick="showLetter('R')">R/r</button>
+    <button class="letter-button" onclick="showLetter('S')">S/s</button>
+    <button class="letter-button" onclick="showLetter('T')">T/t</button>
+    <button class="letter-button" onclick="showLetter('U')">U/u</button>
+    <button class="letter-button" onclick="showLetter('V')">V/v</button>
+    <br>
+    <button class="letter-button" onclick="showLetter('W')">W/w</button>
+    <button class="letter-button" onclick="showLetter('X')">X</button>
+    <button class="letter-button" onclick="showLetter('Y')">Y/y</button>
+    <button class="letter-button" onclick="showLetter('Z')">Z/z</button>
+    
+  
+    
+    <!-- Agrega botones para las otras letras del alfabeto -->
+    <!-- Ejemplo: <button onclick="showLetter('C')">C</button> -->
+  </div>
+  <p id="word" style="font-size: 80px;"></p>
+  <script>
+    const letterData = {
+      'A': {
+        images: ['A1.jpeg', 'A2.jpeg', 'A3.jpeg', 'A4.jpeg', 'A5.jpeg'],
+        words: ['A1', 'A2', 'A3', 'A4', 'A5']
+      },
+      'B': {
+        images: ['B1.jpeg', 'B2.jpeg', 'B3.jpeg', 'B4.jpeg','B5.jpeg'],
+        words: ['B1', 'B2', 'B3', 'B4','B5']
+      },
+      'C': {
+        images: ['C1.jpeg', 'C2.jpeg', 'C3.jpeg', 'C4.jpeg', 'C5.jpeg'],
+         words: ['C1', 'C2', 'C3', 'C4', 'C5']
+      },
+      'D': {
+        images: ['D1.jpeg', 'D2.jpeg', 'D3.jpeg', 'D4.jpeg', 'D5.jpeg'],
+         words: ['D1', 'D2', 'D3', 'D4', 'D5']
+      },
+      'E': {
+        images: ['E1.jpeg', 'E2.jpeg', 'E3.jpeg', 'E4.jpeg', 'E5.jpeg'],
+         words: ['E1', 'E2', 'E3', 'E4', 'E5']
+      },
+      'F': {
+        images: ['F1.jpeg', 'F2.jpeg', 'F3.jpeg', 'F4.jpeg', 'F5.jpeg'],
+         words: ['F1', 'F2', 'F3', 'F4', 'F5']
+      },
+      'G': {
+        images: ['G1.jpeg', 'G2.jpeg', 'G3.jpeg', 'G4.jpeg', 'G5.jpeg'],
+         words: ['G1', 'G2', 'G3', 'G4', 'G5']
+      },
+      'H': {
+        images: ['H1.jpeg', 'H2.jpeg', 'H3.jpeg', 'H4.jpeg', 'H5.jpeg'],
+         words: ['H1', 'H2', 'H3', 'H4', 'H5']
+      },
+      'I': {
+        images: ['I1.jpeg', 'I2.jpeg', 'I3.jpeg', 'I4.jpeg', 'I5.jpeg'],
+         words: ['I1', 'I2', 'I3', 'I4', 'I5']
+      },
+      'J': {
+        images: ['J1.jpeg', 'J2.jpeg', 'J3.jpeg', 'J4.jpeg', 'J5.jpeg'],
+         words: ['J1', 'J2', 'J3', 'J4', 'J5']
+      },
+      'K': {
+        images: ['K1.jpeg', 'K2.jpeg', 'K3.jpeg', 'K4.jpeg', 'K5.jpeg'],
+         words: ['K1', 'K2', 'K3', 'K4', 'K5']
+      },
+      'L': {
+        images: ['L1.jpeg', 'L2.jpeg', 'L3.jpeg', 'L4.jpeg', 'L5.jpeg', 'L6.jpeg'],
+         words: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6']
+      },
+      'M': {
+        images: ['M1.jpeg', 'M2.jpeg', 'M3.jpeg', 'M4.jpeg', 'M5.jpeg'],
+         words: ['M1', 'M2', 'M3', 'M4', 'M5']
+      },
+      'N': {
+        images: ['N1.jpeg', 'N2.jpeg', 'N3.jpeg', 'N4.jpeg', 'N5.jpeg'],
+         words: ['N1', 'N2', 'N3', 'N4', 'N5']
+      },
+      // Agrega más letras con imágenes y palabras correspondientes
+      'Ñ': {
+        images: ['Ñ1.jpeg', 'Ñ2.jpeg'],
+         words: ['Ñ1', 'Ñ2']
+      },
+      'O': {
+        images: ['O1.jpeg', 'O2.jpeg', 'O3.jpeg', 'O4.jpeg', 'O5.jpeg'],
+         words: ['O1', 'O2', 'O3', 'O4', 'O5']
+      },
+      'P': {
+        images: ['P1.jpeg', 'P2.jpeg', 'P3.jpeg', 'P4.jpeg', 'P5.jpeg'],
+         words: ['P1', 'P2', 'P3', 'P4', 'P5']
+      },
+      'Q': {
+        images: ['Q1.jpeg', 'Q2.jpeg', 'Q3.jpeg', 'Q4.jpeg', 'Q5.jpeg'],
+         words: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
+      },
+      'R': {
+        images: ['R1.jpeg', 'R2.jpeg', 'R3.jpeg', 'R4.jpeg', 'R5.jpeg'],
+         words: ['R1', 'R2', 'R3', 'R4', 'R5']
+      },
+      'S': {
+        images: ['S1.jpeg', 'S2.jpeg', 'S3.jpeg', 'S4.jpeg', 'S5.jpeg'],
+         words: ['S1', 'S2', 'S3', 'S4', 'S5']
+      },
+      'T': {
+        images: ['T1.jpeg', 'T2.jpeg', 'T3.jpeg', 'T4.jpeg', 'T5.jpeg'],
+         words: ['T1', 'T2', 'T3', 'T4', 'T5']
+      },
+      'U': {
+        images: ['U1.jpeg', 'U2.jpeg', 'U3.jpeg', 'U4.jpeg', 'U5.jpeg'],
+         words: ['U1', 'U2', 'U3', 'U4', 'U5']
+      },
+      'V': {
+        images: ['V1.jpeg', 'V2.jpeg', 'V3.jpeg', 'V4.jpeg', 'V5.jpeg'],
+         words: ['V1', 'V2', 'V3', 'V4', 'V5']
+      },
+      'W': {
+        images: ['W1.jpeg', 'W2.jpeg', 'W3.jpeg', 'W4.jpeg', 'W5.jpeg'],
+         words: ['W1', 'W2', 'W3', 'W4', 'W5']
+      },
+      'X': {
+        images: ['X1.jpeg'],
+         words: ['X1']
+      },
+      'Y': {
+        images: ['Y1.jpeg', 'Y2.jpeg', 'Y3.jpeg', 'Y4.jpeg',],
+         words: ['Y1', 'Y2', 'Y3', 'Y4',]
+      },
+      'Z': {
+        images: ['Z1.jpeg', 'Z2.jpeg', 'Z3.jpeg', 'Z4.jpeg', 'Z5.jpeg'],
+         words: ['Z1', 'Z2', 'Z3', 'Z4', 'Z5']
+      },
+
+    };
+
+    const currentData = {};
+
+    function showLetter(letter) {
+      const letterImage = document.getElementById('image');
+      const wordDisplay = document.getElementById('word');
+
+      // Obtén los datos actuales para la letra
+      const data = letterData[letter];
+
+      // Verifica si ya se han mostrado todas las imágenes y palabras
+      if (!currentData[letter]) {
+        currentData[letter] = { imageIndex: 0, wordIndex: 0 };
+      } else {
+        currentData[letter].imageIndex = (currentData[letter].imageIndex + 1) % data.images.length;
+        currentData[letter].wordIndex = (currentData[letter].wordIndex + 1) % data.words.length;
+      }
+
+      const currentImage = data.images[currentData[letter].imageIndex];
+      const currentWord = data.words[currentData[letter].wordIndex];
+
+      // Cambia la imagen y la palabra asociada a la letra seleccionada
+      letterImage.src = `img/${currentImage}`; // Asegúrate de tener las imágenes correspondientes
+      loadWordDefinition(letter, currentWord); // Cargar la definición de la palabra
+    }
+
+    function loadWordDefinition(letter, word) {
+      const wordDisplay = document.getElementById('word');
+      const wordFilePath = `Palabras/${word}.txt`;
+
+      const request = new XMLHttpRequest();
+      request.open('GET', wordFilePath, true);
+
+      request.onload = function() {
+        if (request.status === 200) {
+          wordDisplay.textContent = `${letter.toUpperCase()}${letter.toLowerCase()} - ${request.responseText}`;
+        } else {
+          wordDisplay.textContent = `${letter.toUpperCase()}${letter.toLowerCase()} - (Palabra no encontrada)`;
+        }
+      };
+
+      request.send();
+    }
+  </script>
+</body>
+</html>
