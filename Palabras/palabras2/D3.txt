@@ -1,2 +1,0 @@
-Dd DINERO / dinero
- Moneda corriente.

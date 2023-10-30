@@ -1,2 +1,0 @@
-HELICE /
-Conjunto de aletas que giran alrededor de un eje y empujan el fluido ambiente produciendo en él una fuerza de reacción que se utiliza principalmente para la propulsión de barcos y aeronaves.

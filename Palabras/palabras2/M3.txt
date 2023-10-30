@@ -1,2 +1,0 @@
-MINA/mina
-Excavación que se hace para extraer un mineral.

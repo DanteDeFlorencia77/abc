@@ -1,3 +1,0 @@
-COCHE / coche
-Automóvil destinado al transporte de personas y con capacidad no superior a siete plazas.
- 

@@ -1,2 +1,0 @@
-CINE / cine
- Local o sala donde como espectáculo se exhiben las películas cinematográficas.

@@ -1,2 +1,0 @@
-RADAR/radar
-Sistema que utiliza radiaciones electromagnéticas reflejadas por un objeto para determinar la localización o velocidad de este.
